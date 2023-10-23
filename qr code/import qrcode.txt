@@ -1,0 +1,10 @@
+import qrcode
+from PIL import Image
+qr=qrcode.QRCode(version=10,box_size=3,border=1)
+
+link="https://www.google.com/"
+
+qr.add_data(link)
+qr.make(fit=True)
+img=qr.make_image(fill="black",back_color="purple")
+img.save("web.png")
